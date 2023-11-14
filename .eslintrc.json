@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["prettier"],
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "rules": {
+    "no-undef": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "quotes": ["error", "single"],
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": 0
+  }
 }
