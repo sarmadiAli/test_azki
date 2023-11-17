@@ -125,7 +125,7 @@ export default function CarsComponent() {
             )}
           />
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={6}>
           <Button
             onClick={router.back}
             className="azkiBtn rotateSvg"
@@ -135,7 +135,7 @@ export default function CarsComponent() {
             <Typography>بازگشت</Typography>
           </Button>
         </Grid>
-        <Grid container justifyContent={'flex-end'} item xs={12} lg={6}>
+        <Grid container justifyContent={'flex-end'} item xs={6}>
           <Button type="submit" className="azkiBtn" variant="outlined">
             <Typography> مرحله بعد</Typography>
             <Arrow />
