@@ -6,7 +6,7 @@ const breakpoints = {
   sm: 600,
   md: 1024,
   lg: 1280,
-  xl: 1920,
+  xl: 1500,
 };
 
 const createdBreakpoints = createBreakpoints({ values: breakpoints });
@@ -79,37 +79,31 @@ const makeTheme = (): { theme: Theme } => {
       h1: {
         ...createFontSize(32, 24),
         fontWeight: 700,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       h2: {
         ...createFontSize(28, 20),
         fontWeight: 500,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       h3: {
         ...createFontSize(27, 20),
         fontWeight: 500,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       h4: {
         ...createFontSize(26, 19),
         fontWeight: 500,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       h5: {
         ...createFontSize(25, 19),
         fontWeight: 500,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       h6: {
         ...createFontSize(24, 18),
         fontWeight: 500,
-        lineHeight: 1.2,
         color: '#1C1B20',
       },
       subtitle1: {
@@ -118,33 +112,23 @@ const makeTheme = (): { theme: Theme } => {
         color: '#1C1B20',
       },
       subtitle2: {
-        ...createFontSize(20, 16),
+        ...createFontSize(18, 14),
         fontWeight: 500,
         color: '#1C1B20',
       },
       body1: {
-        ...createFontSize(18, 16),
+        ...createFontSize(16, 16),
         fontWeight: 400,
-        lineHeight: 1.8,
-        color: '#1C1B20B2',
       },
       body2: {
         ...createFontSize(16, 14),
         fontWeight: 400,
-        lineHeight: 1.8,
-        color: '#1C1B2066',
       },
       caption: {
         fontSize: 14,
         fontWeight: 400,
         color: '#1C1B2066',
       },
-      overline: {
-        fontSize: 12,
-        fontWeight: 400,
-        color: '#1C1B2066',
-      },
-      button: { ...createFontSize(16, 14), fontWeight: 700 },
     },
     shape: {
       borderRadius: 2,
@@ -177,13 +161,21 @@ const makeTheme = (): { theme: Theme } => {
         styleOverrides: {
           root: {
             textTransform: 'none',
-            padding: '0.875rem 2rem',
-            '&.Mui-disabled': {
-              color: theme.palette.primary.main,
-            },
+            padding: '8px 3rem',
+
+            borderRadius: '50px',
           },
           contained: {
             color: '#fff',
+          },
+        },
+      },
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '& label': {
+              fontSize: '12px',
+            },
           },
         },
       },
