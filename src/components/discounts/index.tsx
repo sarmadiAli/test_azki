@@ -33,7 +33,7 @@ export default function Discounts() {
     formState: { errors },
     handleSubmit,
   } = useForm<FormValues>();
-  const modalAction = (data: any) => {
+  const modalAction = (data: FormValues) => {
     dispatch({
       type: 'CHOOSE_DISCOUNTS',
       payload: data,

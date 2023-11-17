@@ -34,8 +34,8 @@ export default function CarsComponent() {
     handleSubmit,
     resetField,
     reset,
-  } = useForm<FormValues>({ ...state.cars });
-  const handlerSub = (data: any) => {
+  } = useForm<FormValues>();
+  const handlerSub = (data: FormValues) => {
     dispatch({
       type: 'CHOOSE_CARS',
       payload: data,
@@ -128,16 +128,7 @@ export default function CarsComponent() {
         <Grid item xs={12} lg={6}>
           <Button
             onClick={router.back}
-            sx={{
-              width: '150px',
-              padding: '10px 16px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              svg: {
-                // display: 'none',
-                transform: 'rotate(180deg)',
-              },
-            }}
+            className="azkiBtn rotateSvg"
             variant="outlined"
           >
             <Arrow />
@@ -145,16 +136,7 @@ export default function CarsComponent() {
           </Button>
         </Grid>
         <Grid container justifyContent={'flex-end'} item xs={12} lg={6}>
-          <Button
-            type="submit"
-            sx={{
-              width: '150px',
-              padding: '10px 16px',
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-            variant="outlined"
-          >
+          <Button type="submit" className="azkiBtn" variant="outlined">
             <Typography> مرحله بعد</Typography>
             <Arrow />
           </Button>

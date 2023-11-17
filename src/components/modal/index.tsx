@@ -9,7 +9,6 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { styled } from 'node_modules/@tanstack/react-query-devtools/build/lib/utils';
 import React from 'react';
 import Done from '../svgs/Done';
 import { useMyContext } from 'src/context/myContext';

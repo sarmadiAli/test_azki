@@ -164,6 +164,17 @@ const makeTheme = (): { theme: Theme } => {
             padding: '8px 3rem',
 
             borderRadius: '50px',
+            '&.azkiBtn': {
+              width: '150px',
+              padding: '10px 16px',
+              display: 'flex',
+              justifyContent: 'space-between',
+            },
+            '&.rotateSvg': {
+              svg: {
+                transform: 'rotate(180deg)',
+              },
+            },
           },
           contained: {
             color: '#fff',

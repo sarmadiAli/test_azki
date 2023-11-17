@@ -82,34 +82,16 @@ export default function Companies() {
 
         <Grid item xs={12} lg={6}>
           <Button
-            sx={{
-              width: '150px',
-              padding: '10px 16px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              svg: {
-                // display: 'none',
-                transform: 'rotate(180deg)',
-              },
-            }}
-            variant="outlined"
             onClick={router.back}
+            className="azkiBtn rotateSvg"
+            variant="outlined"
           >
             <Arrow />
             <Typography>بازگشت</Typography>
           </Button>
         </Grid>
         <Grid container justifyContent={'flex-end'} item xs={12} lg={6}>
-          <Button
-            type="submit"
-            sx={{
-              width: '150px',
-              padding: '10px 16px',
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-            variant="outlined"
-          >
+          <Button className="azkiBtn " variant="outlined" type="submit">
             <Typography> مرحله بعد</Typography>
             <Arrow />
           </Button>
