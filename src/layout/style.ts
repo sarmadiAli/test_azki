@@ -22,5 +22,8 @@ export const LayoutContainerStyled = styled(Grid)`
     ${(props) => props.theme.breakpoints.down('md')} {
       width: 400px !important;
     }
+    ${(props) => props.theme.breakpoints.down('sm')} {
+      width: 340px !important;
+    }
   }
 `;

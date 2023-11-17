@@ -35,7 +35,7 @@ export default function HeaderAzki() {
             </Button>
           ) : (
             <Link href={'/'}>
-              <Button variant="text">
+              <Button style={{ padding: '8px 16px' }} variant="text">
                 <Typography variant="body2">ثبت نام</Typography>
               </Button>
             </Link>
