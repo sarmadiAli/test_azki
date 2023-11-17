@@ -5,11 +5,17 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import { CssBaseline } from '@mui/material';
 import createEmotionCache from '../createEmotionCache';
 import makeTheme from '../styles/makeTheme';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import React from 'react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Layout from '../layout';
 import './../styles/globals.css';
+import { MyContextProvider } from '../context/myContext';
+import { ContextProviderSnackBar } from 'src/context/snackBarContext';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,13 +31,20 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <CacheProvider value={{ ...clientSideEmotionCache, ...cacheRtl }}>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
+        <Hydrate state={pageProps.dehydratedState}>
+          <ContextProviderSnackBar>
+            <MyContextProvider>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </ThemeProvider>
+            </MyContextProvider>
+          </ContextProviderSnackBar>
+
+          <ReactQueryDevtools initialIsOpen={false} />
+        </Hydrate>
       </QueryClientProvider>
     </CacheProvider>
   );
